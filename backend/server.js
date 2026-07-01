@@ -8,7 +8,7 @@ const PORT = 5000;
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect('mongodb://127.0.0.1:27017/cryptoDB')
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/cryptoDB')
     .then(() => console.log("Database connected successfully! Ready to store records permanently."))
     .catch((err) => console.log("Database connection paused:", err.message));
 
