@@ -14,7 +14,7 @@ export default function App() {
     const ethHistory = [{ p: 3210 }, { p: 3190 }, { p: 3230 }, { p: 3180 }, { p: 3140 }, { p: 3160 }, { p: 3120 }, { p: 3150 }];
 
     const fetchDatabaseAccount = () => {
-        fetch('http://localhost:5000/api/account')
+        fetch('https://zs-app.onrender.com')
             .then((res) => res.json())
             .then((data) => {
                 if (data) {
@@ -27,7 +27,7 @@ export default function App() {
     };
 
     const fetchTransactionLogs = () => {
-        fetch('http://localhost:5000/api/transactions')
+        fetch('https://zs-app.onrender.com')
             .then((res) => res.json())
             .then((logs) => { if (Array.isArray(logs)) setTransactions(logs); })
             .catch((err) => console.error(err));
